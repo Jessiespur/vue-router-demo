@@ -1,7 +1,5 @@
 <template>
-  <div class="po-right">
-    我是文档
-  </div>
+  <div>study</div>
 </template>
 
 <script>
