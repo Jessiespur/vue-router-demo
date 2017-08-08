@@ -56,6 +56,7 @@
     watch: {
       // 路径发生变化，$route会重新赋值，监控了这个属性，会执行这个函数
       $route () {
+        console.log(this.$route.meta)
         this.getData()
       }
     },

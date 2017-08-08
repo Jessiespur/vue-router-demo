@@ -1,6 +1,6 @@
 <template>
   <div>
-    关于我
+    关于我{{this.test}}
     <hr>
     <ul class="nav">
       <router-link :to="{name:'About'}" exact tag="li">
@@ -20,6 +20,27 @@
 
 <script>
   export default {
+    data () {
+      return {
+        test: '改变前'
+      }
+    },
+    beforeRouteEnter (to, from, next) {
+      next((vm) => {
+        vm.test = '改变了'
+      })
+//      if (to.meta.login) {
+//        next('/login')
+//      } else {
+//        next()
+//      }
+    },
+    beforeRouteUpdate (to, from, next) {
+      next()
+    },
+    beforeRouteLeave (to, from, next) {
+      next()
+    }
   }
 </script>
 
