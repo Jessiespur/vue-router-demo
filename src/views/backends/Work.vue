@@ -1,6 +1,6 @@
 <template>
-  <div class="po-right">
-    我是文档
+  <div class="main-container work">
+    Work
   </div>
 </template>
 

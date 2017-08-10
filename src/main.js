@@ -2,6 +2,11 @@ import Vue from 'vue'
 import App from './App'
 import router from '@/router'
 import '@/assets/css/app'
+import utils from '@/lib/utils'
+
+Vue.config.productionTip = false
+
+Vue.use(utils)
 
 new Vue({
   el: '#app',

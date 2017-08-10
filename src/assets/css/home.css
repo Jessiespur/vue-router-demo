@@ -1,66 +1,238 @@
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
+/*过渡样式*/
+.fade-enter{
+  opacity: 0;
 }
-.center{
+.fade-enter-to{
+  opacity: 1;
+}
+.fade-enter-active{
+  transition: 1s;
+}
+.fade-leave{
+  opacity: 1;
+}
+.fade-leave-to{
+  opacity: 0;
+}
+.fade-leave-active{
+  transition: 1s;
+}
+/*通用*/
+.container{
+  margin: 0 auto;
+}
+/*home.vue*/
+.home-container{
+  width:40%;
+  margin: 0 auto;
+  margin-top: 100px;
   text-align: center;
 }
-.style-common{
-  width: 100%;
-  height:100%;
+h1{
+  font-size: 26px;
+}
+h2{
+  font-size: 35px;
+  font-weight: normal;
+  letter-spacing: 20px;
+}
+.login-btn{
   position: absolute;
-  left: 0px;
-  top: 100px;
-  font-size: 26px;
-  margin-top: 20px;
-}
-.pad15{
-  padding: 0 15px;
-}
-.slider{
-  width: 30%;
-  float: left;
-  font-size: 18px;
-  margin-top: 20px;
-  border-right: 2px solid goldenrod;
-}
-.po-right{
-  width: 50%;
-  float: right;
-  font-size: 26px;
+  top:0;
+  right: 0;
   display: inline-block;
+  padding: 3px 10px;
+  background: black;
+  border-radius: 5px;
+}
+.head-img{
+  width:5%;
+  position: absolute;
+  top:0;
+  right: 0;
+}
+.head-img img{
+  width:99%;
+  border-radius: 50%;
+}
+.btn{
   margin-top: 20px;
 }
-.nav-box{
-  background: #eff4f8;
-  padding: 0px 250px;
+.btns div{
+  display: inline-block;
 }
-.nav{
-  overflow: hidden;
+.btn{
+  padding:5px 20px;
+  border-radius:20px;
+  background: green;
 }
-.nav li{
-  float: left;
-  padding: 30px;
-  cursor: pointer;
+.btn a,.login-btn a{
+  color: #fff;
 }
-.nav li a{
-  text-align: center;
+/*header.vue*/
+.header{
+  height:80px;
+  background: #334058;
+}
+.logo{
+  width:5%;
+  padding-left:20px;
+  display: inline-block;
+}
+.logo img{
+  width:100%;
+  background: #fff;
+  border-radius: 50%;
+}
+.header ul{
+  display: inline-block;
+}
+.header ul li{
+  color: #fff;
+  line-height: 80px;
+  display: inline-block;
+}
+.header ul li a{
+  color: #fff;
+  font-size: 20px;
+  padding: 0 20px;
+}
+.header ul li a i{
+  margin-right: 8px;
+}
+.router-link-exact-active.router-link-active a{
+  color: #1d87e8;
   text-decoration: none;
 }
-/*若不指明linkActiveClass: 'is-active'，则选中状态的class默认为router-link-active*/
-.router-link-active{
-  background: rebeccapurple;
+.person{
+  float: right;
+  display: inline-block;
+  line-height: 80px;
+  color:#fff;
+  font-size: 16px;
 }
-.is-active {
-  background: indianred;
+.person img{
+  width: 15%;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.login-out{
+  position: absolute;
+  top: 82px;
+  right: 150px;
+  padding: 8px 45px;
+  background: #334058;
   color: #fff;
+  border-radius: 5px;
 }
-.own-active {
-  background: green;
-  color: #fff;
+/*layout.vue-title*/
+.breadcrumb{
+  padding-left: 15px;
+  height: 50px;
+  background: #f0f2f9;
+  line-height: 50px;
+  font-size: 16px;
+  font-weight: bold;
 }
-.user-list,.user-info,.info-list{
+.breadcrumb span{
+  font-weight: normal;
+  padding-left: 3px;
+}
+/*project.vue*/
+.main-container,.main-content{
   margin-top: 20px;
+}
+.create-pro{
+  width:98%;
+  margin: 0 auto;
+  height: 50px;
+  border: 2px solid #c0c0c0;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 20px;
+  line-height: 50px;
+}
+.create-pro i{
+  margin-right: 10px;
+}
+.pro-box{
+  width: 350px;
+  height:200px;
+  line-height:200px;
+  border-radius: 10px;
+  background: #33405a;
+  color: #fff;
+  text-align: center;
+  font-size: 25px;
+}
+/*登录页*/
+.login-content{
+  width: 400px;
+  height: 300px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right:0;
+  bottom: 0;
+  margin: auto;
+  text-align: center;
+  z-index: 100;
+  color: #fff;
+}
+.login img{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+.login-form input{
+  width: 100%;
+  height: 50px;
+  border-radius: 8px;
+  margin-top: 20px;
+  background-color: rgba(50, 129, 169, 0.4);
+  border: 1px solid #2076A9;
+  color: #fff;
+  font-size: 20px;
+}
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+  color: rgba(255,255,255,.6);
+  padding-left: 20px;
+}
+.login-form input[type="submit"]{
+  background: coral;
+}
+.login-content span{
+  display: block;
+  padding-top: 20px;
+}
+/*document.vue*/
+.document{
+  clear: both;
+  overflow: hidden;
+}
+.main-menu{
+  width: 19%;
+  float: left;
+  font-size: 34px;
+}
+.main-menu>li{
+  margin-left: 60px;
+}
+.nav-dropdown li{
+  margin-left: 20px;
+}
+.doc-right{
+  width: 80%;
+  float: right;
+  border-left: 2px solid royalblue;
+}
+/*DocView.vue*/
+.doc-content{
+  margin-left: 50px;
+  width: 80%;
+}
+.doc-content>div{
+  height:300px;
 }
