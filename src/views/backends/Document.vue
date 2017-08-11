@@ -71,9 +71,6 @@
               .easing(TWEEN.Easing.Quadratic.Out)
               .onUpdate(function () {
                 doc.scrollTop = this.number.toFixed() // 将这个数变成整数
-                console.log(this.number.toFixed(0))
-                console.log(el.offsetTop)
-                console.log(doc.scrollTop)
               })
               .start()
           }

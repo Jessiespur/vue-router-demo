@@ -21,6 +21,9 @@
 .container{
   margin: 0 auto;
 }
+.pad-25{
+  padding-left: 25px;
+}
 /*home.vue*/
 .home-container{
   width:40%;
@@ -215,7 +218,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 .main-menu{
   width: 19%;
   float: left;
-  font-size: 34px;
+  font-size: 32px;
 }
 .main-menu>li{
   margin-left: 60px;
@@ -226,13 +229,81 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 .doc-right{
   width: 80%;
   float: right;
-  border-left: 2px solid royalblue;
 }
 /*DocView.vue*/
 .doc-content{
-  margin-left: 50px;
-  width: 80%;
+  height:80%;
+  overflow: scroll;
+  position: absolute;
+  left: 350px;
+  top: 180px;
+  width: 78%;
+  padding-left: 40px;
+  border-left: 2px solid royalblue;
 }
 .doc-content>div{
   height:300px;
+}
+/*Work.vue*/
+.searchIpt{
+  width: 30%;
+  background: #e4e3fe;
+  border-radius: 20px;
+  padding: 5px;
+  text-align: center;
+  margin-left: 40px;
+}
+.select-input{
+  position: relative;
+}
+.select-input input{
+  border-radius: 20px;
+  height: 40px;
+  width: 75%;
+  border: 1px solid red;
+  font-size: 20px;
+  padding-left: 50px;
+  cursor: pointer;
+}
+
+.select-input i{
+  position: absolute;
+  left:18px;
+  top: 10px;
+  color: #999;
+  font-size: 26px;
+}
+.go-search{
+  display: inline-block;
+  background: #fd615e;
+  padding: 4px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+}
+.list ul li{
+  line-height: 40px;
+  cursor: pointer;
+  margin-top: 5px;
+  width: 85%;
+}
+.list ul li:hover{
+  background: #fd615e;
+  border-radius: 20px;
+  color: #fff;
+}
+/*calculator.vue*/
+.cal{
+  width: 80%;
+  text-align: center;
+}
+.cal-inps{
+  margin-top: 25px;
+}
+.cal-inps input{
+  width: 40px;
+  line-height: 40px;
+  font-size: 30px;
+}
+.cal-inps span{
+  padding: 0 10px;
 }

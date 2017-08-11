@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '@/components/Home'
 // import Layout from '@/views/Layout'
 import Login from '@/components/Login'
+import Calculator from '@/views/functions/Calculator'
 // import Document from '@/views/backends/Document'
 // import Work from '@/views/backends/Work'
 // import Project from '@/views/backends/Project'
@@ -38,13 +39,6 @@ Vue.use(VueRouter)
 
 let router = new VueRouter({
   mode: 'history',
-  scrollBehavior (to, from, savedPosition) {
-    if (to.hash) {
-      return {
-        selector: to.hash
-      }
-    }
-  },
   routes: [
     {
       path: '/',
@@ -73,6 +67,10 @@ let router = new VueRouter({
         {
           path: '/document',
           component: Document
+        },
+        {
+          path: '/calculator',
+          component: Calculator
         }
       ]
     },

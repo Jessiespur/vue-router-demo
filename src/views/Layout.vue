@@ -17,7 +17,8 @@
   let flags = {
     project: '我的项目',
     work: '工作台',
-    document: '文档'
+    document: '文档',
+    calculator: '计算器'
   }
   export default {
     data () {
