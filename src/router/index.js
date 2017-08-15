@@ -4,6 +4,7 @@ import Home from '@/components/Home'
 // import Layout from '@/views/Layout'
 import Login from '@/components/Login'
 import Calculator from '@/views/functions/Calculator'
+import Data from '@/views/backends/Data'
 // import Document from '@/views/backends/Document'
 // import Work from '@/views/backends/Work'
 // import Project from '@/views/backends/Project'
@@ -28,7 +29,6 @@ let Document = (resolve) => {
 //     resolve(require('@/views/backends/Work'))
 //   }, 'aa')
 // }
-
 let Project = (resolve) => {
   return require.ensure([], () => {
     resolve(require('@/views/backends/Project'))
@@ -71,6 +71,10 @@ let router = new VueRouter({
         {
           path: '/calculator',
           component: Calculator
+        },
+        {
+          path: '/data',
+          component: Data
         }
       ]
     },

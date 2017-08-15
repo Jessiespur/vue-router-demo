@@ -307,3 +307,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 .cal-inps span{
   padding: 0 10px;
 }
+/*Data.vue*/
+.data{
+  padding-left: 40px;
+}

@@ -4,10 +4,13 @@ import router from './router'
 import '@/assets/css/app'
 import utils from '@/lib/utils'
 import store from './store'
+import Axios from 'axios'
+import VueAxios from 'vue-axios'
 
 Vue.config.productionTip = false
 
 Vue.use(utils)
+Vue.use(VueAxios, Axios)
 
 new Vue({
   el: '#app',

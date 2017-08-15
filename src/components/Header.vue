@@ -6,6 +6,7 @@
       <router-link to="/work" tag="li"><a><i class="fa fa-code"></i>工作台</a></router-link>
       <router-link to="/document" tag="li"><a><i class="fa fa-book"></i>文档</a></router-link>
       <router-link to="/calculator" tag="li"><a><i class="fa fa-calculator"></i>计算器</a></router-link>
+      <router-link to="/data" tag="li"><a><i class="fa fa-database"></i>数据</a></router-link>
     </ul>
     <div class="person" @click = "displayOut">
       <img src="../assets/head.jpg">

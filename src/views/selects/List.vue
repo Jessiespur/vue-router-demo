@@ -1,18 +1,24 @@
 <template>
   <div class="list">
     <ul>
-      <li v-for="item in items" @click="clickHandle(item)">{{item}}</li>
+      <li v-for="item in list" @click="changeTit(item.title)">{{item.title}}</li>
     </ul>
   </div>
 </template>
 
 <script>
+  import {mapMutations} from 'vuex'
   export default {
-    props: ['items'],
-    methods: {
-      clickHandle (val) {
-        this.$emit('changeTitle', val)
+    computed: {
+      list () {
+        return this.$store.state.selectModule.list
       }
+    },
+    methods: {
+      ...mapMutations(['changeTit'])
+    },
+    created () {
+      this.$store.dispatch('getListAction')
     }
   }
 </script>

@@ -1,14 +1,55 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import axios from 'axios'
 
 Vue.use(Vuex)
-// 定义一个容器
-let store = new Vuex.Store({
+
+let selectModule = {
   state: {
-    count: 100
+    inpTitle: '',
+    list: []
   },
   mutations: {
-    addIncrement (state, n) { // addIncrement自定义的事件，组件里如果要用到这个，刚this.$store.commit('addIncrement')
+    changeTit (state, value) {
+      state.inpTitle = value
+    },
+    changeList (state, list) {
+      state.list = list
+    }
+  },
+  actions: {
+    getListAction ({commit, dispatch}) {
+      axios.get('http://www.easy-mock.com/mock/59913b77a1d30433d860ef60/hejuan/demo/hejuan/demo/work/list')
+        .then((data) => {
+          commit('changeList', data.data.data) // 拿到数据后，提交mutation, 改变状态
+        })
+        .catch((err) => {
+          console.log(err)
+        })
+    }
+  }
+}
+
+// 取值
+// this.$store.state.title 根实例下的状态
+// this.$store.state.selectModule.title 子模块下的状态
+let store = new Vuex.Store({
+  state: {
+    count: 100,
+    num: [
+      {name: 'hh', isDispatch: true},
+      {name: 'jj', isDispatch: false},
+      {name: 'dd', isDispatch: true},
+      {name: 'jj', isDispatch: false}
+    ]
+  },
+  getters: {
+    filterCount: (state) => {
+      return state.num.filter((val) => val.isDispatch)
+    }
+  },
+  mutations: {
+    addIncrement (state, n) {
       state.count += n
     },
     subtraction (state, payload) {
@@ -22,6 +63,9 @@ let store = new Vuex.Store({
         context.commit('addIncrement', 5)
       }, 1000)
     }
+  },
+  modules: {
+    selectModule
   }
 })
 

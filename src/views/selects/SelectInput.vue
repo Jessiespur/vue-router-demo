@@ -1,16 +1,19 @@
 <template>
   <div class="select-input clearfix">
-    <input type="text" @click="showListHandle" :value="title"/><i class="fa fa-search"></i>
+    <input type="text" @click="showListHandle" :value="inpTitle"/><i class="fa fa-search"></i>
     <span class="go-search">GO</span>
   </div>
 </template>
 
 <script>
   export default {
-    props: ['isShow', 'title'],
+    props: ['isShow'],
     computed: {
       initShow () {
         return this.isShow
+      },
+      inpTitle () {
+        return this.$store.state.selectModule.inpTitle
       }
     },
     methods: {

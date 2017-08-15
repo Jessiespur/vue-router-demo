@@ -2,7 +2,7 @@
   <div class="main-container work">
     <section class="searchIpt">
       <select-input :title="title" :is-show.sync="listShow"></select-input>
-      <list v-show="listShow" :items="listData" @changeTitle="titleHandle"></list>
+      <list v-show="listShow"></list>
     </section>
   </div>
 </template>
@@ -13,20 +13,17 @@
   export default {
     data () {
       return {
-        listShow: false,
-        listData: ['html+css', 'html5+css3', 'javascript', 'jquery', 'es6', 'node.js', 'webpack', 'vue.js'],
-        title: ''
+        listShow: false
+      }
+    },
+    computed: {
+      title () {
+        return this.$store.state.inpTitle
       }
     },
     components: {
       SelectInput,
       List
-    },
-    methods: {
-      titleHandle (title) {
-        this.title = title
-        this.listShow = false
-      }
     }
   }
 </script>
