@@ -19,7 +19,7 @@ let selectModule = {
   },
   actions: {
     getListAction ({commit, dispatch}) {
-      axios.get('http://www.easy-mock.com/mock/59913b77a1d30433d860ef60/hejuan/demo/hejuan/demo/work/list')
+      axios.get('http://www.easy-mock.com/mock/59913b77a1d30433d860ef60/hejuan/demo/list')
         .then((data) => {
           commit('changeList', data.data.data) // 拿到数据后，提交mutation, 改变状态
         })
