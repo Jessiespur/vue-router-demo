@@ -24,17 +24,17 @@
     cancelToken: source.token
   })
 // 拦截请求
-  HTTP.interceptors.request.use((config) => {
-    return config
-  }, (err) => {
-    return Promise.reject(err)
-  })
-// 拦截响应
-  HTTP.interceptors.response.use((response) => {
-    return response
-  }, (err) => {
-    return Promise.reject(err)
-  })
+//  HTTP.interceptors.request.use((config) => {
+//    return config
+//  }, (err) => {
+//    return Promise.reject(err)
+//  })
+//// 拦截响应
+//  HTTP.interceptors.response.use((response) => {
+//    return response
+//  }, (err) => {
+//    return Promise.reject(err)
+//  })
 
   export default {
     data () {
@@ -44,8 +44,8 @@
     },
     created () {
       this.$http.get('http://www.easy-mock.com/mock/59913b77a1d30433d860ef60/hejuan/demo/list')
-        .then((response) => {
-          console.log(response)
+        .then((res) => {
+          this.reqData = res.data
         })
         .catch((err) => {
           console.log(err)
